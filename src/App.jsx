@@ -14,7 +14,9 @@ function App() {
         <Route path="/register" element={loaderHoc(Register)} />
         <Route path="/home" element={<Homepage/>} />
       </Routes>
-        {/* <AiSearch/> */}
+        {/* <AiSearch/> 
+        https://www.figma.com/file/PtQTuDYzsrcBrp3RobkEpD/Remarques?node-id=1%3A2
+        */}
        </div>
   )
 }
