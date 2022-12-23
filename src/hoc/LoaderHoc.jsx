@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import Spinner from '../common-components/Spinner'
+import Loader from '../common-components/Loader'
+import { useAuth } from '../hooks/useAuth'
 
 const loaderHoc = (Component) => {
     const [loading, setLoading] = useState(true)
+    const {auth} = useAuth()
     useEffect(() => {
    setLoading(true)
    setTimeout(() => {
     setLoading(false)
-   }, 1300);
+   }, auth?.id? 1300 :500);
     }, [])
 
   return (
-    loading?<Spinner/>:<Component/>
+    loading?<Loader/>:<Component/>
   )
 }
 

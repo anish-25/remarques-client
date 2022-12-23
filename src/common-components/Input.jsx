@@ -40,12 +40,9 @@ const Input = ({
         </label>
       )}
       {type==="password" && isStrengthReqd&&(
-        <div className="flex justify-start items-center min-h-[60px]">
-      {
-        value.length ? (
-          <p className="text-secondary font-medium tracking-[1px]"> Strength : <span className={`${strengthColor} `}>{passwordStrength}</span> </p>
-          ) : <></>
-          }
+        <div className="absolute right-3 top-0 flex justify-end items-center min-h-[30px] text-sm">
+            {value.length ? (
+          <span className={`${strengthColor} `}>{` `+passwordStrength}</span>) : <></>}
           </div>
           )}
     </div>

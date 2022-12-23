@@ -15,12 +15,29 @@ export const AuthProvider = ({children}) =>{
         })
     }
 
+    const otpVerify = (email,otp) => {
+        return axios.post('/verify-otp',{
+            email,
+            otp
+        })
+    }
+
+    const createUser = (name,email,password) => {
+        return axios.post('/register',{
+            name,
+            email,
+            password
+        })
+    }
+
     return(
         <AuthContext.Provider 
          value={{
             auth,
             setAuth,
-            userVerify
+            userVerify,
+            otpVerify,
+            createUser
          }
         }>
             {children}
